@@ -1,0 +1,571 @@
+.first
+    min-height: 672px
+    z-index: 1
+    position: relative
+    &__item
+        width: 100%
+        height: 100%
+        position: relative
+    &__img
+        width: 100%
+        height: 100%
+        object-fit: cover
+    &__content
+        position: absolute
+        top: 270px
+        left: 50%
+        transform: translateX(-50%)
+        width: 1120px
+        margin: 0 auto
+    &__title
+        font-size: 40px
+        font-family: "MontBold"
+        color: #fff
+        text-transform: uppercase
+        margin-bottom: 30px
+        letter-spacing: 0.02em
+    &__subtitle
+        font-size: 14px
+        font-family: "MontRegular"
+        color: #fff
+        margin-bottom: 40px
+        line-height: 140%
+        letter-spacing: 0.02em
+        max-width: 572px
+        font-weight: 400
+    &__btn
+        margin-left: 0
+        color: #fff
+    .slick-dots
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        width: max-content
+        position: absolute
+        right: 158px
+        top: 50%
+        transform: translateY(-50%)
+        li
+            button
+                background: rgba(255, 255, 255, 0.4)
+                font-size: 0
+                width: 25px
+                height: 2px
+                border: none
+                cursor: pointer
+        &:not(:last-child)
+            margin-bottom: 16px
+        .slick-active
+            button
+                width: 93px
+                background: #fff
+    .next
+        position: absolute
+        right: 158px
+        bottom: 40px
+        cursor: pointer
+        svg
+            circle
+                stroke: rgba(255, 255, 255, 0.4)
+            path
+                transition: .2s .2s
+                fill: rgba(255, 255, 255, 0.4)
+        
+        &:hover
+            svg
+                circle
+                    stroke: #fff
+                path
+                    transition: .0s
+                    opacity: 0
+            .first__arrow
+                width: 50px
+                opacity: 1
+                transition: .4s width
+                path
+                    transition: .4s
+                    opacity: 1
+                    fill: #fff
+    &__arrow
+        position: absolute
+        right: 0
+        top: 47%
+        width: 25px
+        height: 14px
+        transform: translate(-50%, -50%)
+        opacity: 0
+        transition: .4s
+        &--right
+            right: unset
+            left: 50%
+            transform: translate(-5px, -50%) rotate(180deg)
+    
+    .prev
+        position: absolute
+        right: 228px
+        bottom: 40px
+        z-index: 2
+        cursor: pointer
+        svg
+            circle
+                stroke: rgba(255, 255, 255, 0.4)
+            path
+                transition: .2s .2s
+                fill: rgba(255, 255, 255, 0.4)
+        &:hover
+            svg
+                circle
+                    stroke: #fff
+                path
+                    transition: .0s
+                    opacity: 0
+            .first__arrow
+                width: 50px
+                opacity: 1
+                transition: .4s width
+                path
+                    transition: .4s
+                    opacity: 1
+                    fill: #fff
+    &__social
+        position: absolute
+        bottom: 52px
+        left: 159px
+        display: flex
+        a
+            &:not(:last-child)
+                margin-right: 20px
+        &::before
+            content: ''
+            position: absolute
+            right: 0
+            top: 50%
+            transform: translate(-130px, -50%)
+            width: 1000px
+            height: 1px
+            background: #AE816A
+    &__bottom
+        position: absolute
+        bottom: 17px
+        font-size: 12px
+        color: #fff
+        font-family: "MontRegular"
+        left: 50%
+        transform: translateX(-50%)
+        &::before
+            content: ''
+            width: 1px
+            height: 65px
+            background: linear-gradient(180.02deg, #FDFDFD 0.01%, rgba(255, 255, 255, 0) 154.4%)
+            position: absolute
+            left: 50%
+            top: -70px
+            transform: translateX(-50%)
+
+.services
+    padding-top: 90px
+    overflow: hidden
+    padding-bottom: 190px
+    .container  
+        position: relative
+    &__slide
+        display: grid !important
+        grid-template-columns: 436px 436px
+        grid-gap: 40px 46px
+        width: 936px
+    &__text
+        font-size: 14px
+        color: #464646
+        max-width: 436px
+        margin: 0
+    &__item
+        display: flex
+        flex-direction: column
+    &__image
+        right: -210px
+        top: 10px
+        position: absolute
+        &::before 
+            content: ''
+            background: #AE816A
+            width: 300px
+            height: 366px
+            position: absolute
+            left: -10px
+            bottom: -10px
+            z-index: 1
+        img
+            width: 381px
+            height: 624px
+            position: relative
+            z-index: 2
+            object-fit: cover
+    .next
+        position: absolute
+        bottom: -80px
+        left: 67px
+        cursor: pointer
+    .prev
+        position: absolute
+        bottom: -80px
+        left: 0
+        cursor: pointer
+
+.our-projects
+    overflow: hidden
+    position: relative
+    z-index: 1
+    padding-bottom: 100px
+    &::before
+        content: ''
+        width: 1320px
+        height: 1320px
+        background: transparent
+        border: 2px solid #E5E5E5
+        position: absolute
+        right: -420px
+        border-radius: 50%
+    &__block
+        position: relative
+        z-index: 2
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 40px 95px
+        margin-bottom: 90px
+    &__image
+        position: relative
+        margin-bottom: 35px
+        width: 100%
+        height: 320px
+        overflow: hidden
+        cursor: pointer
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            transition: .8s
+    &__link
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 0
+        width: 100%
+        height: 110px
+        background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.005) 0%, rgba(255, 255, 255, 0.005) 100%)
+        box-shadow: inset -5px -5px 250px rgba(255, 255, 255, 0.02)
+        backdrop-filter: blur(22px)
+        opacity: 0
+        z-index: -1
+        transform: translateY(10px)
+        transition: .4s
+        a
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            font-family: "MontRegular"
+            font-size: 16px
+            color: #fff
+            display: flex
+            align-items: center
+            &::after
+                content: ''
+                width: 61px
+                height: 61px
+                position: absolute
+                left: -50%
+                top: 50%
+                transform: translate(50%, -50%)
+                background: transparent
+                border-radius: 50%
+                border: 1px solid #AE816A
+            svg
+                margin-left: 11px
+    &__text
+        font-size: 14px
+        max-width: 450px
+    &__item
+        transition: .5s
+        cursor: pointer
+        &:hover
+            transform: translateY(-22px)
+            .our-projects__image
+                overflow: hidden
+                img
+                    transform: scale(1.3) 
+            .our-projects__link
+                transform: translateY(-50%)
+                opacity: 1
+                z-index: 2
+    &__all
+        position: relative
+        font-family: "MontRegular"
+        font-size: 16px
+        color: #000
+        margin: 0 auto
+        width: max-content
+        display: block
+        display: flex
+        align-items: center
+        &::after
+            content: ''
+            width: 61px
+            height: 61px
+            position: absolute
+            left: -60px
+            top: 50%
+            transform: translate(50%, -50%)
+            background: transparent
+            border-radius: 50%
+            border: 1px solid #AE816A
+        svg
+            margin-left: 11px
+
+.check-in
+    background: url('../img/bg/check-in-bg.jpg') center center/cover no-repeat
+    margin-bottom: 90px
+    position: relative
+    &::before 
+        content: ''
+        background: #AE816A
+        width: 540px
+        height: 11px
+        position: absolute
+        top: -10px
+        left: 0px
+        z-index: 1
+    &__title
+        font-size: 22px
+        color: #fff
+        display: flex
+        flex-direction: column
+        font-weight: 300
+        line-height: 120%
+        margin-bottom: 12px
+        span
+            font-size: 28px
+            line-height: 120%
+            font-family: "MontBold"
+    &__subtitle
+        font-size: 14px
+        color: #fff
+        font-weight: 300
+        margin-bottom: 50px
+    &__fields
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 27px
+        margin-bottom: 34px
+    &__input
+        height: 32px
+        border: none
+        border-bottom: 1px solid #fff
+        color: #fff
+        padding-bottom: 4px
+        line-height: 32px
+        background: transparent
+    &__btn
+        margin-left: 0
+        color: #fff
+        &::after
+            width: 51px
+            height: 51px
+            left: -50px
+            z-index: 1
+        span
+            position: relative
+            z-index: 2
+    &__block
+        width: 720px
+        height: 394px
+        margin: 0 auto
+        background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.01) 100%);
+        box-shadow: inset -5px -5px 250px rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(18px)
+        padding: 80px 88px 73px 120px
+
+
+.why
+    overflow: hidden
+    padding-bottom: 100px
+    .container  
+        position: relative
+    &__block
+        display: grid
+        grid-template-columns: 385px 385px
+        grid-gap: 40px 62px
+        width: 872px
+    &__text
+        font-size: 14px
+        color: #464646
+        max-width: 385px
+        margin-left: 60px
+    &__item
+        display: flex
+        flex-direction: column
+    &__subtitle
+        display: flex
+        align-items: center
+        font-size: 20px
+        margin-bottom: 30px
+        svg
+            max-width: 46px
+            max-height: 46px
+            width: 100%
+            height: 100%
+            margin-right: 15px
+    &__image
+        right: -190px
+        top: 10px
+        position: absolute
+        &::before 
+            content: ''
+            background: #AE816A
+            width: 324px
+            height: 324px
+            position: absolute
+            top: -10px
+            left: -10px
+            z-index: 1
+        img
+            width: 381px
+            height: 511px
+            position: relative
+            z-index: 2
+            object-fit: cover
+
+.how-work
+    background: url('../img/bg/how-work.jpg') center center/cover no-repeat
+    padding: 55px 0
+    background-attachment: fixed
+    &__title
+        text-align: center
+        color: #fff
+        font-family: "MontBold"
+        font-size: 35px
+        margin-bottom: 50px
+    &__subtitle
+        text-align: center
+        color: #fff
+        font-family: "MontLight"
+        font-size: 18px
+        margin-bottom: 45px
+        font-weight: 300
+    &__block
+        display: grid
+        grid-template-columns: 1fr
+        width: 824px
+        margin: 0 auto
+        position: relative
+        &::before
+            content: ''
+            width: 1px 
+            height: calc(100% + 80px)
+            background: #fff
+            position: absolute
+            left: 110px
+            top: -20px
+    &__content
+        margin-left: 96px
+        position: relative
+        &::after
+            content: ''
+            width: 28px
+            height: 28px
+            transform: translate(-50%)
+            border: 1px solid #AE816A
+            position: absolute
+            top: 0
+            border-radius: 50%
+            left: -45px
+    &__item
+        display: flex
+        align-items: flex-start
+        &:not(:last-child)
+            .how-work__content
+                padding-bottom: 65px
+    &__stage
+        color: #fff
+        min-width: 60px
+        font-size: 16px
+    &__contentTitle
+        font-size: 18px
+        font-family: "MontBold"
+        margin-bottom: 14px
+        color: #fff
+    &__contentText
+        color: #fff
+        font-size: 14px
+        font-family: "MontRegular"
+        line-height: 23px
+        font-weight: 300
+
+.request
+    padding: 118px 0 130px 0
+    position: relative
+    overflow: hidden
+    &__form
+        display: flex
+        flex-direction: column
+        width: 415px
+    &__title
+        font-size: 28px
+        line-height: 130%
+        font-family: "MontBold"
+        margin-bottom: 22px
+        span
+            color: #AE816A
+    &__subtitle
+        font-size: 14px
+        font-weight: 300
+        margin-bottom: 50px
+    &__input
+        background: transparent
+        border: none
+        border-bottom: 1px solid #000
+        padding-bottom: 10px
+        font-size: 16px
+        line-height: 22px
+        color: #000
+        max-width: 385px
+        &::placeholder,
+        &::-webkit-input-placeholder,
+        &::-moz-placeholder,
+        &::-ms-input-placeholder,
+            color: #000
+        &:not(:last-child)
+            margin-bottom: 50px
+    &__btn
+        color: #000
+        margin-left: 0
+        margin-top: 15px
+        &::after
+            width: 51px
+            height: 51px
+            left: -50px
+    &__image
+        right: 0
+        top: 104px
+        position: absolute
+        &::before 
+            content: ''
+            background: #AE816A
+            width: 514px
+            height: 281px
+            position: absolute
+            top: -10px
+            left: -10px
+            z-index: 1
+        img
+            width: 742px
+            height: 476px
+            position: relative
+            z-index: 2
+            object-fit: cover
+    &__text
+        font-size: 150px
+        position: absolute
+        left: -10px
+        bottom: 35px
+        color: rgba(248, 248, 248, 1)
+        text-transform: uppercase

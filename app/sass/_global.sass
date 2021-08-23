@@ -16,27 +16,88 @@ body
 	flex: 0 0 auto
 
 .container
-  max-width: 1240px
+  max-width: 1120px
   margin: 0 auto
   padding: 0 15px
 
-.bigTitle
-	word-wrap: break-word
-
 .title
+	word-wrap: break-word
+	display: flex
+	flex-direction: column
+	font-size: 35px
+	margin-bottom: 60px
+	width: max-content
+	font-family: "MontLight" !important
+	span
+		font-family: "MontBold"
+		font-size: 50px
+		color: #AE816A
+		padding-top: 10px
+		position: relative
+		&::before
+			content: ''
+			width: 1000px
+			right: -80px
+			background: #AE816A
+			height: 1px
+			position: absolute
+			top: 10px
+		&::after
+			content: ''
+			width: 38px
+			height: 38px
+			position: absolute
+			right: -118px
+			top: 10px
+			transform: translateY(-50%)
+			background: transparent
+			border-radius: 50%
+			border: 1px solid #AE816A
+
+.subtitle
 	word-wrap: break-word
 	color: #000
 	font-family: "MontBold"
 	font-size: 25px
 	margin-bottom: 26px
 
-.subtitle
-	word-wrap: break-word
+.subtitle-small
+	word-wrap: break-word	
 	color: #000
 	font-family: "MontBold"
 	font-size: 18px
 	margin-bottom: 22px
 
+.btn
+	position: relative
+	font-family: "MontRegular"
+	font-size: 16px
+	color: #000
+	margin: 0 auto
+	width: max-content
+	display: block
+	display: flex
+	align-items: center
+	background: none
+	border: none
+	cursor: pointer
+	&::after
+		content: ''
+		width: 61px
+		height: 61px
+		position: absolute
+		left: -60px
+		top: 50%
+		transform: translate(50%, -50%)
+		background: transparent
+		border-radius: 50%
+		border: 1px solid #AE816A
+		z-index: 1
+	svg
+		margin-left: 11px
+	span
+		position: relative
+		z-index: 2
 
 input
 	cursor: pointer
@@ -45,3 +106,127 @@ input
 	&::-moz-placeholder,
 	&::-ms-input-placeholder,
 		color: #fff
+
+.header
+	position: absolute
+	top: 28px
+	width: 1120px
+	left: 50%
+	transform: translateX(-50%)
+	z-index: 10
+	.container
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__nav
+		display: flex
+		align-items: center
+	&__menu
+		display: flex
+		align-items: center
+		li
+			a
+				font-size: 16px
+				font-family: "MontRegular"
+				color: #fff
+				padding-bottom: 5px
+				transition: .4s
+				border-bottom: 1px solid transparent
+				&:hover
+					transition: .4s
+					border-bottom: 1px solid #fff
+			&:not(:last-child)
+				margin-right: 60px
+	&__social
+		display: flex
+		align-items: center
+	&__phone
+		margin-right: 62px
+		font-size: 14px
+		font-family: "MontRegular"
+		color: #fff
+		text-decoration: underline
+		display: flex
+		align-items: center
+		svg
+			margin-right: 9px
+	&__lang
+		font-size: 16px
+		font-family: "MontRegular"
+		color: #fff
+		
+.footer
+	background: #AE816A
+	padding: 70px 0 16px 0
+	.container
+		display: flex
+		flex-direction: column
+		position: relative
+	&__logo
+		svg
+			width: 197px
+			height: auto
+	&__nav
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr 1fr
+		margin-bottom: 55px
+	&__item
+		display: flex
+		flex-direction: column
+		li
+			&:not(:last-child)
+				margin-bottom: 25px
+			a,span
+				font-size: 18px
+				font-family: "MontRegular"
+				color: #fff
+			a
+				display: flex
+				svg
+					margin-right: 10px
+					max-width: 20px
+					max-height: 20px
+					width: 100%
+					height: 100%
+		&__phone
+			display: flex
+			flex-direction: column
+	&__scroll
+		display: flex
+		position: absolute
+		color: #fff
+		bottom: 50px
+		right: 0
+		cursor: pointer
+		svg
+			margin-right: 10px
+			transform: rotate(270deg)
+			path
+				fill: #fff
+	&__social
+		display: flex
+		width: 360px
+		margin: 0 auto
+		justify-content: space-between
+		margin-bottom: 70px
+	&__socialList
+		display: flex
+		height: auto
+		a
+			max-width: 25px
+			max-height: 25px
+			width: 100%
+			&:not(:last-child)
+				margin-right: 30px
+	&__btn
+		color: #fff
+		margin-left: 0
+		&::after
+			border: 1px solid #fff
+		svg
+			path
+				fill: #fff
+	&__rights
+		text-align: center
+		color: #fff
+		font-size: 14px
