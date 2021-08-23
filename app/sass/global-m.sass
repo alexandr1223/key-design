@@ -84,8 +84,14 @@
         &__phone,
         &__lang
             text-align: center
+            display: flex
             color: #000
             font-size: 24px
+            align-items: center
+            svg
+                margin-right: 8px
+                path
+                    fill: #000
     .footer
         padding-top: 40px
         &__nav
@@ -117,3 +123,92 @@
                 margin: 4px 0
         &__social
             margin-top: 20px
+
+@media (max-width: 767px)
+    .container
+        width: 100%
+        padding: 0 15px
+    .title
+        font-size: 20px
+        min-height: 88px
+        margin-bottom: 50px
+        &__brown
+            font-size: 28px
+            padding-top: 10px
+        &__line
+            top: 22px
+            &::after
+                width: 24px
+                height: 24px
+                background: #fff
+    .subtitle-small
+        font-size: 16px
+    .btn
+        margin-left: 20px
+        &::after
+            width: 40px
+            height: 40px
+            left: -40px
+    .header
+        top: 14px
+        &__logo
+            svg
+                width: 100px
+    .header-mobile
+        top: -14px
+        &__logo
+            svg
+                width: 100px
+        &__close
+            svg
+                width: 20px
+                height: 20px
+        &__menu
+            margin-top: 100px
+            li
+                a
+                    font-size: 20px
+                &:not(:last-child)
+                    margin-bottom: 20px
+        &__social
+            width: 100%
+        &__phone,
+        &__lang
+            font-size: 18px
+
+    @keyframes toRight
+        0%
+            right: 600px
+        100%
+            right: -50px
+    @keyframes circleCreate
+        0%
+            right: 600px
+        100%
+            right: -68px
+        
+    .footer
+        &__logo
+            svg
+                width: 100px
+        &__social
+            width: 100%
+            align-items: center
+            flex-direction: column
+        &__btn
+            margin: 0 auto
+            margin-bottom: 30px
+        &__item
+            li
+                a, span
+                    font-size: 15px
+        &__phone
+            span, a
+                font-size: 15px
+        &__scroll
+            right: 15px
+            font-size: 14px
+            svg
+                margin-right: 4px
+        &__rights
+            font-size: 12px
