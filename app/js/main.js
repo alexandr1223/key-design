@@ -106,4 +106,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
       anchorPlacement: 'top', // defines which position of the element regarding to window should trigger the animation
     
     });
+
+    $(window).scroll(function(){
+      $('.title').each(function(index, item) {
+        console.log()
+        var wt = $(window).scrollTop();
+        var wh = $(window).height();
+        var et = $(item).offset().top;
+        var eh = $(item).outerHeight();
+        var dh = $(document).height();   
+        if (wt + wh >= et || wh + wt == dh || eh + et < wh){
+          $(item).addClass('title--anim')
+        }
+      })
+    });
 });

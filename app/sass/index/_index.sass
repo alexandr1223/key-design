@@ -12,9 +12,9 @@
         object-fit: cover
     &__content
         position: absolute
-        top: 270px
+        top: 50%
         left: 50%
-        transform: translateX(-50%)
+        transform: translate(-50%,-50%)
         width: 1120px
         margin: 0 auto
     &__title
@@ -279,8 +279,12 @@
                 background: transparent
                 border-radius: 50%
                 border: 1px solid #AE816A
+                z-index: 1
             svg
                 margin-left: 11px
+            span
+                position: relative
+                z-index: 2
     &__text
         font-size: 14px
         max-width: 450px
@@ -508,6 +512,8 @@
         display: flex
         flex-direction: column
         width: 415px
+        position: relative
+        z-index: 2
     &__title
         font-size: 28px
         line-height: 130%
@@ -547,6 +553,7 @@
         right: 0
         top: 104px
         position: absolute
+        z-index: 2
         &::before 
             content: ''
             background: #AE816A
@@ -569,3 +576,4 @@
         bottom: 35px
         color: rgba(248, 248, 248, 1)
         text-transform: uppercase
+        z-index: 1
