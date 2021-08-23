@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             })
         }
     } 
-    // menu('', '', '');
+    menu('.header__humburger', '.header-mobile', '.header-mobile__close');
 
     $('.services__block').slick({
         dots: false,
