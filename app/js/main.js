@@ -121,29 +121,41 @@ document.addEventListener("DOMContentLoaded", function(event) {
       })
     });
 
-    $(document).ready(function () {
+    // $(document).ready(function () {
 
-        var show = true;
-        var countbox = ".benefits__inner";
-        $(window).on("scroll load resize", function () {
-            if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
-            var w_top = $(window).scrollTop(); // Количество пикселей на которое была прокручена страница
-            var e_top = $(countbox).offset().top; // Расстояние от блока со счетчиками до верха всего документа
-            var w_height = $(window).height(); // Высота окна браузера
-            var d_height = $(document).height(); // Высота всего документа
-            var e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
-            if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
-                $('.benefits__number').css('opacity', '1');
-                $('.benefits__number').spincrement({
-                    thousandSeparator: "",
-                    duration: 1200
-                });
+    //     var show = true;
+    //     var countbox = ".benefits__inner";
+    //     $(window).on("scroll load resize", function () {
+    //         if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
+    //         var w_top = $(window).scrollTop(); // Количество пикселей на которое была прокручена страница
+    //         var e_top = $(countbox).offset().top; // Расстояние от блока со счетчиками до верха всего документа
+    //         var w_height = $(window).height(); // Высота окна браузера
+    //         var d_height = $(document).height(); // Высота всего документа
+    //         var e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
+    //         if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+    //             $('.benefits__number').css('opacity', '1');
+    //             $('.benefits__number').spincrement({
+    //                 thousandSeparator: "",
+    //                 duration: 1200
+    //             });
                 
-                show = false;
-            }
-        });
+    //             show = false;
+    //         }
+    //     });
 
-    });
+    // });
+
+    function productTabs() {
+      $('.portfolio__product').each(function() {
+        let ths = $(this);
+        ths.find('.portfolio__contentItem').not(':first').hide();
+        ths.find('.portfolio__product-tab').click(function() {
+          ths.find('.portfolio__product-tab').removeClass('portfolio__product-tab--activeTab').eq($(this).index()).addClass('portfolio__product-tab--activeTab');
+          ths.find('.portfolio__contentItem').hide().eq($(this).index()).fadeIn()
+        }).eq(0).addClass('active');
+      });
+    }
+    productTabs();
 
     function openDocument() {
       document.querySelectorAll('.useful__item').forEach(item => {

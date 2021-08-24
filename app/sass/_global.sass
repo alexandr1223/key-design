@@ -209,6 +209,15 @@ input
 .breadcrumbs
 	position: relative
 	height: 282px
+	&::before	
+		content: ''
+		position: absolute
+		height: 100%
+		width: 100%
+		left: 0 
+		top: 0
+		z-index: 1
+		background: rgba(0, 0, 0, .6)
 	&__bg
 		position: absolute
 		top: 0
@@ -221,12 +230,14 @@ input
 		top: 178px
 		left: 50%
 		transform: translateX(-50%)
+		z-index: 2
 		width: 1120px
 	&__block
 		display: flex
 		align-items: center
 		width: max-content
 		position: relative
+		z-index: 3
 		&::before
 			content: ''
 			width: 1000px

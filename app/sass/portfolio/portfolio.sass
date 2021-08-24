@@ -1,0 +1,198 @@
+.portfolio
+    padding-top: 84px
+    overflow: hidden
+    position: relative
+    padding-bottom: 120px
+    &__keyDesign
+        position: absolute
+        right: 0
+        font-size: 150px
+        text-transform: uppercase
+        color: rgba(248, 248, 248, 1)
+        top: 160px
+    &__product-tabs
+        display: flex
+        margin-bottom: 134px
+        position: relative
+        &::after
+            content: ''
+            width: 2000px
+            height: 1px
+            position: absolute
+            left: 0
+            bottom: -1px
+            background: #AE816A
+            z-index: 1
+    &__product-tab
+        border-bottom: 1px solid transparent
+        padding-bottom: 17px
+        cursor: pointer
+        padding-left: 22px
+        &:first-child
+            width: 351px
+            margin-right: 135px
+        span
+            font-size: 22px
+        &-first
+            position: relative
+            &::after
+                content: ''
+                width: 351px
+                height: 4px
+                position: absolute
+                left: 0
+                bottom: -1px
+                background: #AE816A
+                z-index: 1
+                display: none
+        &-second
+            position: relative
+            &::after
+                content: ''
+                width: 256px
+                height: 4px
+                position: absolute
+                left: 0
+                bottom: -1px
+                background: #AE816A
+                z-index: 1
+                display: none
+        &--activeTab
+            color: #AE816A
+            font-family: "MontBold"
+            z-index: 2
+            &::after
+                display: block
+            &::before
+                content: ''
+                width: 139px    
+                height: 139px
+                border: 1px solid #AE816A
+                border-radius: 50%
+                position: absolute
+                top: -43px
+                left: -2px
+    &__block
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 60px 35px
+        position: relative
+        &::after
+            content: ''
+            width: 1145px
+            height: 1145px
+            position: absolute
+            left: -629px
+            top: 280px
+            border-radius: 50%
+            border: 2px solid #E6E6E6
+            z-index: 1
+    &__image
+        position: relative
+        margin-bottom: 35px
+        width: 100%
+        height: 320px
+        overflow: hidden
+        cursor: pointer
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            position: relative
+            z-index: 2
+    &__link
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 0
+        width: 100%
+        height: 110px
+        background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.005) 0%, rgba(255, 255, 255, 0.005) 100%)
+        box-shadow: inset -5px -5px 250px rgba(255, 255, 255, 0.02)
+        backdrop-filter: blur(22px)
+        opacity: 0
+        transform: translateY(10px)
+        transition: .4s
+        span
+            font-size: 18px
+            color: #fff
+            max-width: 366px
+            width: 100%
+            display: block
+            font-family: "MontBold"
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-55%, -50%)
+            line-height: 27px
+    &__btn
+        margin-left: 30px
+    &__item
+        cursor: pointer
+        position: relative
+        z-index: 2
+        &::after
+            content: ''
+            width: 322px
+            height: 167px
+            position: absolute
+            left: -10px 
+            top: -10px
+            background: #AE816A
+            z-index: 1
+        &:hover
+            .portfolio__link
+                transform: translateY(-50%)
+                opacity: 1
+                z-index: 2
+    &__pagination
+        margin: 0 auto
+        width: max-content
+        margin-top: 50px
+        position: relative
+        z-index: 4
+        ul
+            padding: 0
+            display: flex
+            align-items: center
+            li
+                list-style: none
+                position: relative
+                &:last-child
+                    margin-right: 0
+                &:first-child
+                    margin-left: 0
+    &__number
+        a 
+            font-size: 20px
+            color: #122735
+            height: 35px
+            width: 24px
+            display: flex
+            align-items: center
+            justify-content: center
+            border-radius: 50%
+            font-family: "MontRegular"
+            transition: .3s
+            &:hover
+                color: #fff
+                background: #273992
+    &__active
+        a
+            font-size: 28px
+            color: #AE816A
+            width: 35px
+            margin-bottom: 4px
+    &__next,&__previous
+        margin: 0 20px
+        svg
+            display: block
+            margin: 0 auto
+            width: 50px
+            height: auto
+
+.request
+    &--portfolio
+        padding-top: 20px
+    &__image
+        top: 10px
