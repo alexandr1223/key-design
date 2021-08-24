@@ -1,0 +1,206 @@
+.creator
+    padding-top: 90px
+    padding-bottom: 94px
+    position: relative
+    &__info 
+        display: flex
+        flex-direction: column
+        position: relative
+        z-index: 1
+        margin-left: 30px
+    &__block
+        position: relative
+        display: flex
+    &__title
+        margin-bottom: 50px
+    &__image
+        position: relative
+        z-index: 3
+        min-width: 420px
+        max-width: 420px
+        height: auto
+        margin-left: -80px
+        img
+            width: 100%
+            height: 100%
+    &__text
+        p
+            font-size: 14px
+            line-height: 26px
+            &:not(:last-child)
+                margin-bottom: 30px
+    &__bottom
+        position: absolute
+        left: 20px
+        bottom: 0
+        display: flex
+        z-index: 2
+    &__name
+        background: #AE816A
+        width: 552px
+        height: 113px
+        display: flex
+        flex-direction: column
+        padding: 27px 0 27px 304px
+        h3
+            color: #fff
+            font-size: 18px
+            margin-bottom: 10px
+        span
+            font-size: 16px
+            font-weight: 300
+            color: #fff
+    &__caption
+        margin-left: 55px
+        height: 113px
+    &__keyDesign
+        position: absolute
+        right: 0
+        font-size: 150px
+        text-transform: uppercase
+        color: rgba(248, 248, 248, 1)
+        bottom: 140px
+
+.our-team
+    padding-bottom: 130px
+    overflow: hidden
+    .container  
+        position: relative
+    &__title
+        margin-bottom: 55px
+    &__block
+        max-width: 741px
+    &__text
+        p
+            font-size: 14px
+            line-height: 26px
+            &:not(:last-child)
+                margin-bottom: 30px
+    &__image
+        right: -190px
+        top: 0
+        position: absolute
+        &::before 
+            content: ''
+            background: #AE816A
+            width: 443px
+            height: 309px
+            position: absolute
+            bottom: -10px
+            left: -10px
+            z-index: 1
+        img
+            width: 481px
+            height: 449px
+            position: relative
+            z-index: 2
+            object-fit: cover
+
+.about
+    overflow: hidden
+    height: 691px
+    margin-bottom: 87px
+    position: relative
+    .container  
+        position: relative
+    &__title
+        margin-bottom: 55px
+    &__block
+        margin-left: 450px
+    &__text
+        margin-bottom: 50px
+        p
+            font-size: 14px
+            line-height: 26px
+            &:not(:last-child)
+                margin-bottom: 30px
+    &__image
+        left: -150px
+        top: 0
+        position: absolute
+        img
+            width: 536px
+            height: 691px
+            position: relative
+            z-index: 2
+            object-fit: cover
+    &__btn
+        font-family: "MontBold"
+        font-weight: 500
+        margin-left: 0
+
+.stat
+    position: absolute
+    bottom: 15px
+    left: 0
+    z-index: 2
+    width: 100%
+    background: url('../img/bg/stat-bg.jpg') center center/cover no-repeat
+    &::after
+        content: ''
+        position: absolute
+        height: 100%
+        width: 100%
+        left: 0 
+        top: 0
+        z-index: 2
+        background: rgba(0, 0, 0, .85)
+    &__block
+        position: relative
+        z-index: 3
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        padding: 30px 0 30px 0
+    &__num
+        font-family: "MontBold"
+        font-size: 50px
+        color: #fff
+        line-height: 50px
+        margin-bottom: 13px
+    &__text
+        font-size: 14px
+        color: #fff
+
+.useful
+    position: relative
+    padding-bottom: 89px
+    &__keyDesign
+        position: absolute
+        right: 20px
+        font-size: 150px
+        text-transform: uppercase
+        color: rgba(248, 248, 248, 1)
+        top: -165px
+    &__block
+        display: flex
+        height: 585px
+    &__image
+        width: 100%
+        height: 100%
+        position: relative
+        object-fit: cover
+    &__item
+        position: relative
+        &:hover > .useful__hover
+            opacity: 1
+    &__left
+        width: 498px
+        margin-right: 15px
+    &__right
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+    &__hover
+        position: absolute
+        top: 0
+        height: 100%
+        width: 100%
+        opacity: 0
+        transition: .4s
+        background: rgba(0, 0, 0, 0.6)
+        cursor: pointer
+        svg
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
