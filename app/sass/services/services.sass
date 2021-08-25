@@ -265,3 +265,75 @@
             line-height: 26px
             &:not(:last-child)
                 margin-bottom: 56px
+
+.full-constructions
+    padding-top: 90px
+    padding-bottom: 90px
+    position: relative
+    overflow: hidden
+    &::before
+        content: ''
+        position: absolute
+        right: -344px
+        width: 690px
+        height: 690px
+        border: 2px solid #E6E6E6
+        border-radius: 50%
+        top: -150px
+    &__block
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 30px
+        position: relative
+        z-index: 2
+    &__item
+        width: 100%
+        height: 415px
+        position: relative
+    &__image
+        width: 100%
+        height: 100%
+        object-fit: cover
+    &__info
+        font-size: 14px
+        line-height: 26px
+        margin-bottom: 30px
+    &__line
+        position: absolute
+        background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.005) 0%, rgba(255, 255, 255, 0.005) 100%)
+        box-shadow: inset -5px -5px 250px rgba(255, 255, 255, 0.02)
+        backdrop-filter: blur(42px)
+        top: 50%
+        height: 109px
+        transform: translateY(-50%)
+        width: 100%
+        left: 0
+    &__text
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        font-size: 24px
+        color: #fff
+        display: flex
+        span
+            font-family: "MontBold"
+            margin-right: 6px
+    &__keyDesign
+        position: absolute
+        right: 0
+        font-size: 150px
+        text-transform: uppercase
+        color: rgba(248, 248, 248, 1)
+        bottom: 0
+        z-index: 1 
+        left: -10px
+
+.big-slider
+    padding: 95px 0
+    img
+        margin: 0 10px
+        opacity: .4
+        cursor: pointer
+    .slick-current
+        opacity: 1

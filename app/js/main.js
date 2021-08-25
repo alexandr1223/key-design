@@ -50,14 +50,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
     $('.first__slider').slick({
-      dots: true,
-      infinite: true,
-      speed: 1000,
-      slidesToShow: 1,
-      arrows: true,
-      prevArrow: "<div class='prev'><img src='../img/svg/left-first-arrow.svg' class='img-svg' alt='left'><img src='../img/svg/long-arrow.svg' class='img-svg first__arrow' alt='left'></div>",
-      nextArrow: "<div class='next'><img src='../img/svg/right-arrow.svg' class='img-svg' alt='right'><img src='../img/svg/long-arrow.svg' class='img-svg first__arrow first__arrow--right' alt='left'></div>",
-  });
+		dots: true,
+		infinite: true,
+		speed: 1000,
+		slidesToShow: 1,
+		arrows: true,
+		prevArrow: "<div class='prev'><img src='../img/svg/left-first-arrow.svg' class='img-svg' alt='left'><img src='../img/svg/long-arrow.svg' class='img-svg first__arrow' alt='left'></div>",
+		nextArrow: "<div class='next'><img src='../img/svg/right-arrow.svg' class='img-svg' alt='right'><img src='../img/svg/long-arrow.svg' class='img-svg first__arrow first__arrow--right' alt='left'></div>",
+    });
+
+	$('.big-slider').slick({
+		dots: false,
+		infinite: true,
+		centerMode: true,
+		variableWidth: true,
+		speed: 1000,
+		slidesToShow: 1,
+		arrows: false
+	});
 
     $(document).ready(function () {
         $('img.img-svg').each(function(){
