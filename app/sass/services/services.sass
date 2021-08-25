@@ -1,0 +1,267 @@
+.service-page
+    height: 100%
+    padding-top: 90px
+    &__block
+        position: relative
+    &__image
+        width: 100%
+        height: auto
+    &__left
+        position: absolute
+        width: 50%
+        height: 100%
+        top: 0
+        left: 0
+        padding: 140px 0 0 133px
+        border-right: 1px solid #fff
+        transition: .4s
+        &:hover
+            background: rgba(0, 0, 0, 0.6)
+            .service-page__text
+                opacity: 1
+            .service-page__btn
+                opacity: 1
+    &__right
+        position: absolute
+        width: 50%
+        height: 100%
+        top: 0
+        right: 0
+        padding: 140px 0 0 133px
+        border-left: 1px solid #fff
+        transition: .4s
+        &:hover
+            background: rgba(0, 0, 0, 0.6)
+            .service-page__text
+                opacity: 1
+            .service-page__btn
+                opacity: 1
+    &__subtitle
+        font-size: 30px
+        font-family: "MontBold"
+        margin-bottom: 32px
+        color: #fff
+    &__text
+        max-width: 397px
+        font-size: 14px
+        line-height: 23px
+        color: #fff
+        margin-bottom: 42px
+        opacity: 0
+        transition: .4s
+    &__btn
+        opacity: 0
+        transition: .4s
+        margin-left: 0
+        span
+            color: #fff
+
+.prices
+    padding-bottom: 100px
+    position: relative
+    overflow: hidden
+    padding-top: 90px
+    &::after
+        content: ''
+        position: absolute
+        width: 924px    
+        height: 924px   
+        right: -202px
+        top: 60px
+        border: 2px solid #E6E6E6
+        border-radius: 50%
+        z-index: 1
+    &__block
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        grid-gap: 16px
+        position: relative
+        z-index: 2
+        background: #fff
+    &__item
+        display: flex
+        flex-direction: column
+        border: 1px solid #AE816A
+    &__itemTitle
+        font-size: 22px
+        font-family: "MontBold"
+        color: #AE816A
+        margin-left: 4px
+        margin-bottom: 8px
+    &__content
+        display: flex
+        flex-direction: column
+        padding: 35px 29px 0 25px
+    &__itemPrice
+        margin-bottom: 45px
+        span
+            display: block
+            margin-left: auto
+            margin-right: -30px
+            background: #AE816A
+            width: 206px
+            text-align: center
+            height: 48px
+            line-height: 48px
+            color: #fff
+            position: relative
+            font-size: 28px
+            font-family: "MontBold"
+            &::before
+                content: ''
+                position: absolute
+                width: 155px
+                height: 1px
+                background: #AE816A
+                left: -155px
+                top: 50%
+                transform: translateY(-50%)
+    &__disable
+        opacity: .3
+    &__list
+        display: flex
+        flex-direction: column
+        margin-bottom: 18px
+        li
+            font-size: 16px
+            padding-left: 41px
+            position: relative
+            display: flex
+            align-items: center
+            line-height: 30px
+            &:not(:last-child)
+                margin-bottom: 11px
+            &::after
+                content: ''
+                position: absolute
+                left: 0
+                width: 17px
+                height: 17px    
+                border: 1px solid #AE816A
+                border-radius: 50%
+    &__more
+        height: 60px
+        margin-left: 25px
+        margin-bottom: 33px
+        font-weight: 600
+    &__btn
+        width: 100%
+        height: 67px
+        line-height: 67px
+        text-align: center
+        font-size: 16px
+        color: #fff
+        background: #AE816A
+
+.prices-modal
+    background: rgba(0, 0, 0, 0.6)
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    height: 100vh
+    opacity: 0
+    visibility: hodden
+    z-index: -10
+    transition: .4s
+    &--active
+        opacity: 1
+        visibility: visible
+        z-index: 10
+    &__block
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        background: #fff
+        width: 1123px
+        height: 815px
+        display: flex
+        flex-direction: column
+        overflow: hidden
+        &::after
+            content: ''
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 100%
+            height: 160px
+            background: rgb(255,255,255)
+            background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    &__image
+        width: 100%
+        height: 158px
+        position: relative
+        img
+            width: 100%
+            height: 100%
+    &__close
+        position: absolute
+        right: 37px
+        top: 20px
+        width: 20px
+        height: 20px
+        cursor: pointer
+        svg
+            width: 20px
+            height: 20px
+            fill: #fff
+    &__content
+        width: 100%
+        height: 100%
+        padding: 30px 80px 
+    &__nav
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 60px
+    &__title
+        font-size: 22px
+        font-family: "MontBold"
+        color: #AE816A
+        margin-bottom: 8px
+    &__itemPrice
+        span
+            display: block
+            margin-left: auto
+            background: #AE816A
+            width: 206px
+            text-align: center
+            height: 48px
+            line-height: 48px
+            color: #fff
+            position: relative
+            font-size: 28px
+            font-family: "MontBold"
+            &::before
+                content: ''
+                position: absolute
+                width: 80px
+                height: 1px
+                background: #AE816A
+                right: -80px
+                top: 50%
+                transform: translateY(-50%)
+    &__text
+        display: flex
+        flex-direction: column
+        overflow-y: scroll
+        padding-right: 32px
+        position: relative
+        height: 480px
+        &::-webkit-scrollbar
+            background: #fff
+            width: 3px
+        &::-webkit-scrollbar-thumb
+            background: #EDEDED
+            width: 3px
+        h3
+            font-size: 18px
+            line-height: 18px
+            font-family: "MontBold"
+            margin-bottom: 23px
+        p
+            font-size: 14px
+            line-height: 26px
+            &:not(:last-child)
+                margin-bottom: 56px

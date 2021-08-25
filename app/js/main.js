@@ -158,20 +158,33 @@ document.addEventListener("DOMContentLoaded", function(event) {
     productTabs();
 
     function openDocument() {
-      document.querySelectorAll('.useful__item').forEach(item => {
-          item.addEventListener('click', function() {
-              document.querySelector('.modal__block img').src = this.querySelector('img').src
-              document.querySelector('.modal').classList.add('modal__show')
+      	document.querySelectorAll('.useful__item').forEach(item => {
+          	item.addEventListener('click', function() {
+				document.querySelector('.modal__block img').src = this.querySelector('img').src
+				document.querySelector('.modal').classList.add('modal__show')
+          	})
+          	document.querySelector('.modal').addEventListener('click', (item) => {
+				if (item.target.classList.contains('modal__block')) {
+					document.querySelector('.modal').classList.remove('modal__show')
+				}
           })
-          document.querySelector('.modal').addEventListener('click', (item) => {
-              if (item.target.classList.contains('modal__block')) {
-                  document.querySelector('.modal').classList.remove('modal__show')
-              }
-          })
-          document.querySelector('.modal__close').addEventListener('click', (item) => {
-              document.querySelector('.modal').classList.remove('modal__show')
-          })
-      })
-  }
-  openDocument();
+			document.querySelector('.modal__close').addEventListener('click', (item) => {
+              	document.querySelector('.modal').classList.remove('modal__show')
+          	})
+      	})
+    }
+    openDocument();
+
+    function openTariffPlan() {
+		document.querySelectorAll('.prices__more').forEach(item => {
+			item.addEventListener('click', () => {
+				document.querySelector('.prices-modal').classList.add('prices-modal--active');
+			})
+		})
+		document.querySelector('.prices-modal__close').addEventListener('click', () => {
+			document.querySelector('.prices-modal').classList.remove('prices-modal--active');
+		})
+    }
+    openTariffPlan();
+
 });
