@@ -1,0 +1,150 @@
+@media (max-width: 1200px)
+    .service-page
+        padding-top: 70px
+        &__left
+            padding: 40px 0 0 50px
+        &__subtitle
+            font-size: 24px
+            margin-bottom: 20px
+        &__text
+            margin-bottom: 30px
+        &__btn
+            margin-left: 20px
+        
+        &__right
+            padding: 40px 0 0 50px
+
+    .prices
+        &::after
+            width: 700px
+            height: 700px
+        &__block
+            grid-template-columns: 1fr 1fr
+        &__item
+            max-width: 340px
+            &:last-child
+                grid-column-start: 1
+                grid-column-end: 3
+                margin: 0 auto
+        &__itemPrice
+            span
+                &::before
+                    width: 135px
+                    left: -135px
+    .prices-modal
+        &__block
+            width: 90%
+        &__content
+            padding: 40px
+        &__nav
+            margin-bottom: 40px
+        &__text
+            p
+                &:not(:last-child)
+                    margin-bottom: 40px
+
+@media (max-width: 767px)
+    .service-page
+        padding-top: 60px
+        &__block
+            width: 100%
+            height: 200px
+            img
+                height: 100%
+                object-fit: cover
+        &__left
+            padding: 20px 10px 0 20px
+        &__subtitle
+            font-size: 16px
+            margin-bottom: 20px
+        &__text
+            font-size: 10px
+            line-height: 120%
+            max-width: 100%
+            margin-bottom: 20px
+        &__btn
+            margin-left: 10px
+            font-size: 10px
+            svg
+                margin-left: 5px
+        &__right
+            padding: 20px 10px 0 20px
+
+    .prices
+        padding-bottom: 60px
+        padding-top: 70px
+        &::after
+            width: 300px
+            height: 300px
+        &__block
+            grid-template-columns: 1fr
+        &__item
+            max-width: 340px
+            &:last-child
+                grid-column-start: unset
+                grid-column-end: unset
+                margin: 0
+        &__itemPrice
+            span
+                &::before
+                    width: 123px
+                    left: -123px
+        &__itemTitle
+            font-size: 18px
+        &__itemPrice
+            margin-bottom: 20px
+            span
+                width: 160px
+                height: 36px
+                line-height: 36px
+                font-size: 24px
+                &::before
+                    width: 170px
+                    left: -170px
+        &__list
+            li
+                font-size: 14px
+                line-height: 20px
+        &__more
+            font-size: 14px
+        &__btn
+            font-size: 14px
+            height: 55px
+            line-height: 55px
+    .prices-modal
+        &__image
+            height: 100px
+            img
+                height: 100px
+                object-fit: cover
+        &__block
+            width: 90%
+            height: 90%
+        &__title
+            font-size: 16px
+        &__content
+            padding: 20px
+        &__nav
+            margin-bottom: 30px
+            display: flex
+            flex-direction: column
+        &__itemPrice
+            margin-top: 10px
+            span
+                width: 160px
+                height: 36px
+                line-height: 36px
+                font-size: 24px
+                &::before
+                    width: 120px
+        &__text
+            h3
+                font-size: 16px
+            p
+                font-size: 14px
+                line-height: 140%
+                &:not(:last-child)
+                    margin-bottom: 40px
+        &__close
+            right: 15px
+            top: 15px
