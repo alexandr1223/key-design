@@ -1,0 +1,81 @@
+@media (max-width: 1200px)
+    .portfolio
+        &__product
+            &-tab
+                width: 100%
+                padding-bottom: 14px
+                span
+                    font-size: 18px
+                &--activeTab
+                    &:before
+                        width: 100px
+                        height: 100px
+                        left: -1px
+                        top: -21px
+                &-first
+                    &::after
+                        width: 280px
+                &-second
+                    &::after
+                        width: 200px
+        
+@media (max-width: 768px)
+    .portfolio
+        padding-bottom: 70px
+        padding-top: 60px
+        &__product
+            &-tabs
+                display: flex
+                flex-direction: column
+                margin-bottom: 50px
+                &::after
+                    display: none
+            span
+                font-size: 16px
+            &-tab
+                padding-left: 10px
+                &:first-child
+                    margin-right: 0
+                    margin-bottom: 20px
+                &--activeTab
+                    &:before
+                        display: none
+                &-first
+                    &::after
+                        width: 270px
+                &-second
+                    &::after
+                        width: 270px
+        &__block
+            grid-template-columns: 1fr
+            &::after
+                width: 400px
+                height: 400px
+                left: -120px
+        &__item
+            &::after
+                width: 200px
+        &__link
+            span
+                font-size: 14px
+                line-height: 160%
+                max-width: 100%
+                width: calc(100% - 30px)
+                left: 50%
+                transform: translate(-50%, -50%)
+        &__previous
+            margin-right: 10px
+            svg
+                width: 35px
+                height: 35px    
+        &__number
+            a
+                font-size: 16px
+        &__active
+            a
+                font-size: 24px
+        &__next
+            margin-left: 10px
+            svg
+                width: 35px
+                height: 35px    
