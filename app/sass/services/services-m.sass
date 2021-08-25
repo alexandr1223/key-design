@@ -42,6 +42,22 @@
             p
                 &:not(:last-child)
                     margin-bottom: 40px
+    .full-constructions
+        &__block
+            grid-gap: 15px
+        &__item
+            height: 300px
+        &__line
+            height: 90px
+        &__text
+            font-size: 18px
+        &__keyDesign
+            font-size: 90px
+            bottom: 20px
+    .big-slider
+        padding: 70px 0
+        img
+            height: 400px
 
 @media (max-width: 767px)
     .service-page
@@ -148,3 +164,23 @@
         &__close
             right: 15px
             top: 15px
+    .full-constructions
+        &::before
+            display: none
+        &__title
+            font-size: 16px
+            max-width: 80%
+            margin-bottom: 30px
+            .title__brown
+                font-size: 20px
+            .title__line
+                top: 17px
+        &__block
+            grid-template-columns: 1fr
+        &__keyDesign
+            display: none
+    .big-slider
+        padding: 70px 0
+        img
+            height: 200px
+            margin: 0 5px

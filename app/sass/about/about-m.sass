@@ -66,6 +66,11 @@
         &__block
             grid-template-columns: 1fr 1fr
             grid-gap: 40px 10px
+            &--realization
+                grid-gap: 40px 20px
+                .features__item
+                    &:first-child
+                        grid-column-end: 2
         &__item
             &:first-child
                 grid-column-start: 1
@@ -196,6 +201,7 @@
             line-height: 18px
             margin-left: 48px
         &__subtitle
+            font-size: 18px
             svg
                 max-width: 35px
                 max-height: 35px
