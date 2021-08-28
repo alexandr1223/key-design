@@ -167,6 +167,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     productTabs();
 
+    function designTabs() {
+      $('.design__product').each(function() {
+        let ths = $(this);
+        ths.find('.design__contentItem').not(':first').hide();
+        ths.find('.design__product-tab').click(function() {
+          ths.find('.design__product-tab').removeClass('design__product-tab--activeTab').eq($(this).index()).addClass('design__product-tab--activeTab');
+          ths.find('.design__contentItem').hide().eq($(this).index()).fadeIn()
+        }).eq(0).addClass('active');
+      });
+    }
+    designTabs();
+
     function openDocument() {
       	document.querySelectorAll('.useful__item').forEach(item => {
           	item.addEventListener('click', function() {
@@ -186,15 +198,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
     openDocument();
 
     function openTariffPlan() {
-		document.querySelectorAll('.prices__more').forEach(item => {
-			item.addEventListener('click', () => {
-				document.querySelector('.prices-modal').classList.add('prices-modal--active');
-			})
-		})
-		document.querySelector('.prices-modal__close').addEventListener('click', () => {
-			document.querySelector('.prices-modal').classList.remove('prices-modal--active');
-		})
-    }
+      	if (document.querySelector('.prices')) {
+			document.querySelectorAll('.prices__more').forEach(item => {
+				item.addEventListener('click', () => {
+				  document.querySelector('.prices-modal').classList.add('prices-modal--active');
+				})
+			  })
+			  document.querySelector('.prices-modal__close').addEventListener('click', () => {
+				document.querySelector('.prices-modal').classList.remove('prices-modal--active');
+			  })
+		  }
+	}
     openTariffPlan();
 
 });

@@ -337,3 +337,67 @@
         cursor: pointer
     .slick-current
         opacity: 1
+
+.design
+    padding-top: 90px
+    padding-bottom: 90px
+    position: relative
+    &__image
+        position: absolute
+        right: 0
+        top: 100px
+        z-index: 1
+    &__keyDesign
+        position: absolute
+        left: 0
+        font-size: 130px
+        text-transform: uppercase
+        color: rgba(248, 248, 248, 1)
+        bottom: 0
+    &__product
+        display: flex
+        align-items: center
+        position: relative
+        z-index: 2
+        min-height: 520px
+    &__product-tabs
+        display: flex
+        flex-direction: column
+        width: 400px
+        margin-right: 28px 
+    &__product-tab
+        span
+            font-size: 22px
+        svg
+            margin-right: 21px
+        &:not(:last-child)
+            margin-bottom: 30px
+    &__btn
+        margin-left: 25px
+    &__contentItem
+        width: 724px
+        padding: 75px 100px 75px 65px
+        background: #AE816A
+    &__content-title
+        font-size: 22px
+        font-family: "MontBold"
+        margin-bottom: 24px
+        color: #fff
+    &__content-text
+        margin-bottom: 44px
+        p
+            font-size: 14px
+            color: #fff
+            line-height: 26px
+            &:not(:last-child)
+                margin-bottom: 20px
+    &__btn
+        &::after
+            border: 1px solid #fff
+        span
+            color: #fff
+            font-weight: 500
+        svg
+            path
+                fill: #fff
+        
