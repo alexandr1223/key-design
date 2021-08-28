@@ -197,6 +197,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     openDocument();
 
+	function projectImage() {
+		document.querySelectorAll('.project-image__item').forEach(item => {
+			item.addEventListener('click', function() {
+			  document.querySelector('.modal__block img').src = this.querySelector('img').src
+			  document.querySelector('.modal').classList.add('modal__show')
+			})
+			document.querySelector('.modal').addEventListener('click', (item) => {
+			  if (item.target.classList.contains('modal__block')) {
+				  document.querySelector('.modal').classList.remove('modal__show')
+			  }
+		})
+		  document.querySelector('.modal__close').addEventListener('click', (item) => {
+				document.querySelector('.modal').classList.remove('modal__show')
+			})
+		})
+	}
+	projectImage();
+
     function openTariffPlan() {
       	if (document.querySelector('.prices')) {
 			document.querySelectorAll('.prices__more').forEach(item => {
