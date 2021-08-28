@@ -58,6 +58,25 @@
         padding: 70px 0
         img
             height: 400px
+    .design
+        &__product
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+        &__contentItem
+            width: 100%
+            max-width: 700px
+            margin-top: 30px
+        &__image
+            display: none
+        &__keyDesign
+            font-size: 90px
+            bottom: 20px
+        &__product-tab
+            span
+                font-size: 20px
+            &:not(:last-child)
+                margin-bottom: 20px
 
 @media (max-width: 767px)
     .service-page
@@ -184,3 +203,36 @@
         img
             height: 200px
             margin: 0 5px
+    .design
+        padding: 70px 0
+        &__product
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+        &__contentItem
+            width: 100%
+            max-width: 100%
+            margin-top: 30px
+            padding: 40px 20px
+        &__content-title
+            font-size: 18px
+        &__content-text
+            margin-bottom: 30px
+            p
+                font-size: 13px
+                line-height: 22px
+        &__image
+            display: none
+        &__keyDesign
+            font-size: 50px
+            bottom: 30px
+        &__product-tab
+            span
+                font-size: 18px
+            svg
+                width: 30px
+                margin-right: 15px
+            &:not(:last-child)
+                margin-bottom: 20px
+        &__product-tabs
+            width: 100%
