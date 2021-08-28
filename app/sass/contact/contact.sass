@@ -1,0 +1,81 @@
+.contact
+    padding-top: 108px
+    padding-bottom: 98px
+    position: relative
+    &::after
+        content: ''
+        position: absolute
+        width: 1000px
+        height: 1000px
+        right: -630px
+        top: 320px
+        border: 2px solid #E6E6E6
+        border-radius: 50%
+        z-index: 1
+    &__image
+        margin-left: -157px
+        position: relative
+        width: 766px
+        &::before
+            content: ''
+            background: #AE816A
+            width: 612px
+            height: 266px
+            position: absolute
+            top: -10px
+            right: -10px
+            z-index: 1
+        img
+            position: relative
+            width: 766px
+            height: 559px
+            z-index: 2
+    &__block
+        display: flex
+    &__info
+        margin-left: 130px
+        display: flex
+        flex-direction: column
+        position: relative
+        z-index: 2
+    &__links
+        display: grid
+        grid-template-columns: 1fr
+        grid-gap: 40px 0
+        li
+            display: flex
+            align-items: center
+            svg
+                margin-right: 20px
+                path
+                    fill: #AE816A
+            a
+                color: #000
+                font-size: 18px
+                line-height: 22px
+    &__top-link
+        align-items: flex-start !important
+    &__phone
+        display: flex
+        flex-direction: column
+        a
+            &:not(:last-child)
+                margin-bottom: 5px
+    &__social
+        display: flex
+        flex-direction: column
+        align-items: flex-start !important
+    &__subtitle
+        font-size: 18px
+        line-height: 22px
+    &__social-items
+        display: flex
+        margin-top: 20px
+        a
+            &:not(:last-child)
+                margin-right: 30px
+            svg
+                max-width: 32px
+                max-height: 32px
+                width: 100%
+                height: auto
