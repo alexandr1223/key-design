@@ -131,6 +131,10 @@ body
 	border: none
 	cursor: pointer
 	font-weight: 600
+	&:hover
+		&::after
+			transform: translate(50px, -50%)
+			background: rgba(174, 129, 106, .2)
 	&::after
 		content: ''
 		width: 61px
@@ -143,6 +147,7 @@ body
 		border-radius: 50%
 		border: 1px solid #AE816A
 		z-index: 1
+		transition: .6s
 	svg
 		margin-left: 11px
 	span

@@ -69,101 +69,44 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		arrows: false
 	});
 
-    $(document).ready(function () {
-        $('img.img-svg').each(function(){
-            var $img = $(this);
-            var imgClass = $img.attr('class');
-            var imgURL = $img.attr('src');
-            $.get(imgURL, function(data) {
-            var $svg = $(data).find('svg');
-            if(typeof imgClass !== 'undefined') {
-            $svg = $svg.attr('class', imgClass+' replaced-svg');
-            }
-            $svg = $svg.removeAttr('xmlns:a');
-            if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-            $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-            }
-            $img.replaceWith($svg);
-            }, 'xml');
-        }); 
-    })
-
-    $(function() {
-      $('.footer__scroll').click(function() {
-        $('html, body').animate({scrollTop: 0},1000);
-        return false;
-      })
-    })
-    AOS.init({
-      // Global settings:
-      disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-      startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-      initClassName: 'aos-init', // class applied after initialization
-      animatedClassName: 'aos-animate', // class applied on animation
-      useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-      disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-      debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-      throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-      
-    
-      // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-      offset: 320, // offset (in px) from the original trigger point
-      delay: 0, // values from 0 to 3000, with step 50ms
-      duration: 700, // values from 0 to 3000, with step 50ms
-      easing: 'ease', // default easing for AOS animations
-      once: true, // whether animation should happen only once - while scrolling down
-      mirror: false, // whether elements should animate out while scrolling past them
-      anchorPlacement: 'top', // defines which position of the element regarding to window should trigger the animation
-    
-    });
+  	$(function() {
+    	$('.footer__scroll').click(function() {
+      	$('html, body').animate({scrollTop: 0},1000);
+      		return false;
+    	})
+	})
+  
+  
 
     $(window).scroll(function(){
-      $('.title').each(function(index, item) {
-        console.log('1')
-        var wt = $(window).scrollTop();
-        var wh = $(window).height();
-        var et = $(item).offset().top;
-        var eh = $(item).outerHeight();
-        var dh = $(document).height();   
-        if (wt + wh >= et || wh + wt == dh || eh + et < wh){
-          $(item).addClass('title--anim')
-        }
-      })
+      	$('.title').each(function(index, item) {
+			var wt = $(window).scrollTop();
+			var wh = $(window).height();
+			var et = $(item).offset().top;
+			var eh = $(item).outerHeight();
+			var dh = $(document).height();   
+			if (wt + wh >= et || wh + wt == dh || eh + et < wh){
+				$(item).addClass('title--anim')
+			}
+      	})
     });
-
-    // $(document).ready(function () {
-
-    //     var show = true;
-    //     var countbox = ".benefits__inner";
-    //     $(window).on("scroll load resize", function () {
-    //         if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
-    //         var w_top = $(window).scrollTop(); // Количество пикселей на которое была прокручена страница
-    //         var e_top = $(countbox).offset().top; // Расстояние от блока со счетчиками до верха всего документа
-    //         var w_height = $(window).height(); // Высота окна браузера
-    //         var d_height = $(document).height(); // Высота всего документа
-    //         var e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
-    //         if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
-    //             $('.benefits__number').css('opacity', '1');
-    //             $('.benefits__number').spincrement({
-    //                 thousandSeparator: "",
-    //                 duration: 1200
-    //             });
-                
-    //             show = false;
-    //         }
-    //     });
-
-    // });
+    $(document).ready(function() {
+      	if (document.querySelectorAll('.title').length > 0) {
+			if ($(window).scrollTop() < $('.title').filter(':first').offset().top) {
+			$('.title').filter(':first').addClass('title--anim')
+        	}
+      	}
+    })
 
     function productTabs() {
-      $('.portfolio__product').each(function() {
-        let ths = $(this);
-        ths.find('.portfolio__contentItem').not(':first').hide();
-        ths.find('.portfolio__product-tab').click(function() {
-          ths.find('.portfolio__product-tab').removeClass('portfolio__product-tab--activeTab').eq($(this).index()).addClass('portfolio__product-tab--activeTab');
-          ths.find('.portfolio__contentItem').hide().eq($(this).index()).fadeIn()
-        }).eq(0).addClass('active');
-      });
+      	$('.portfolio__product').each(function() {
+			let ths = $(this);
+			ths.find('.portfolio__contentItem').not(':first').hide();
+			ths.find('.portfolio__product-tab').click(function() {
+				ths.find('.portfolio__product-tab').removeClass('portfolio__product-tab--activeTab').eq($(this).index()).addClass('portfolio__product-tab--activeTab');
+				ths.find('.portfolio__contentItem').hide().eq($(this).index()).fadeIn()
+        	}).eq(0).addClass('active');
+      	});
     }
     productTabs();
 
@@ -226,7 +169,48 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.querySelector('.prices-modal').classList.remove('prices-modal--active');
 			  })
 		  }
-	}
+	  }
     openTariffPlan();
 
+	AOS.init({
+		// Global settings:
+		disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+		startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+		initClassName: 'aos-init', // class applied after initialization
+		animatedClassName: 'aos-animate', // class applied on animation
+		useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+		disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+		debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+		throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+		
+	  
+		// Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+		offset: 320, // offset (in px) from the original trigger point
+		delay: 0, // values from 0 to 3000, with step 50ms
+		duration: 700, // values from 0 to 3000, with step 50ms
+		easing: 'ease', // default easing for AOS animations
+		once: true, // whether animation should happen only once - while scrolling down
+		mirror: false, // whether elements should animate out while scrolling past them
+		anchorPlacement: 'top', // defines which position of the element regarding to window should trigger the animation
+	  
+	});
+
+    $(document).ready(function () {
+      $('img.img-svg').each(function(){
+          var $img = $(this);
+          var imgClass = $img.attr('class');
+          var imgURL = $img.attr('src');
+          $.get(imgURL, function(data) {
+          var $svg = $(data).find('svg');
+          if(typeof imgClass !== 'undefined') {
+          $svg = $svg.attr('class', imgClass+' replaced-svg');
+          }
+          $svg = $svg.removeAttr('xmlns:a');
+          if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+          $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+          }
+          $img.replaceWith($svg);
+        }, 'xml');
+    }); 
+  })
 });
