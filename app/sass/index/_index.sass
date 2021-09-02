@@ -34,7 +34,7 @@
         max-width: 572px
         font-weight: 400
     &__btn
-        margin-left: 0
+        margin-left: 30px
         color: #fff
     .slick-dots
         display: flex
@@ -161,6 +161,11 @@
             left: 50%
             top: -70px
             transform: translateX(-50%)
+            animation: linearBottom 2s infinite forwards
+	
+@keyframes linearBottom
+    100%
+        background-position: 0 65px
 
 .services
     padding-top: 90px
@@ -205,11 +210,54 @@
         bottom: -80px
         left: 67px
         cursor: pointer
+        svg
+            circle
+                stroke: #000
+            path
+                transition: .2s .2s
+                fill: #000
+        
+        &:hover
+            svg
+                circle
+                    stroke: #000
+                path
+                    transition: .0s
+                    opacity: 0
+            .first__arrow
+                width: 50px
+                opacity: 1
+                transition: .4s width
+                path
+                    transition: .4s
+                    opacity: 1
+                    fill: #000
     .prev
         position: absolute
         bottom: -80px
         left: 0
         cursor: pointer
+        svg
+            circle
+                stroke: #000
+            path
+                transition: .2s .2s
+                fill: #000
+        &:hover
+            svg
+                circle
+                    stroke: #000
+                path
+                    transition: .0s
+                    opacity: 0
+            .first__arrow
+                width: 50px
+                opacity: 1
+                transition: .4s width
+                path
+                    transition: .4s
+                    opacity: 1
+                    fill: #000
 
 .our-projects
     overflow: hidden

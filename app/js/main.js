@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         speed: 1000,
         slidesToShow: 1,
         arrows: true,
-        prevArrow: "<div class='prev'><img src='../img/svg/left-arrow.svg' class='img-svg' alt='left'></div>",
-        nextArrow: "<div class='next'><img src='../img/svg/right-arrow.svg' class='img-svg' alt='right'></div>",
-        responsive: [
+		prevArrow: "<div class='prev'><img src='../img/svg/left-first-arrow.svg' class='img-svg' alt='left'><img src='../img/svg/long-arrow.svg' class='img-svg first__arrow' alt='left'></div>",
+		nextArrow: "<div class='next'><img src='../img/svg/right-arrow.svg' class='img-svg' alt='right'><img src='../img/svg/long-arrow.svg' class='img-svg first__arrow first__arrow--right' alt='left'></div>",
+    	responsive: [
             {
               breakpoint: 1200,
               settings: {
@@ -60,14 +60,36 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
 	$('.big-slider').slick({
-		dots: false,
+		dots: true,
 		infinite: true,
 		centerMode: true,
 		variableWidth: true,
 		speed: 1000,
 		slidesToShow: 1,
-		arrows: false
+		slidesToScroll: 1,
+		arrows: true
 	});
+	document.querySelectorAll('.big-slider__image').forEach(item => {
+		item.addEventListener('click', (e) => {
+			let num = $(e.target).attr('data-slick-index'); 
+			$( '.big-slider' ).slick('slickGoTo', num);
+		})
+	})
+
+	$(document).ready(function(){
+        $(".prices__btn").on("click", function (event) {
+            event.preventDefault();
+            var id  = $(this).attr('href'),
+            top = $(id).offset().top - 100;  
+            $('body,html').animate({scrollTop: top}, 1500);
+        });
+		$(".first__btn").on("click", function (event) {
+            event.preventDefault();
+            var id  = $(this).attr('href'),
+            top = $(id).offset().top - 100;  
+            $('body,html').animate({scrollTop: top}, 1500);
+        });
+    });
 
   	$(function() {
     	$('.footer__scroll').click(function() {
@@ -76,6 +98,44 @@ document.addEventListener("DOMContentLoaded", function(event) {
     	})
 	})
   
+	function validation() {
+		var letters = /^[A-Za-zА-Яа-яЁё\s]+$/;
+		var mailformat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		var numbers = /^[0-9]+$/;
+		if (document.querySelector('.request')) {
+			document.querySelector('.request__input[name="name"]').addEventListener('input', function() {
+				if(this.value.match(letters)) {
+					this.classList.add('valid')
+					this.classList.remove('invalid')
+					return true;
+				} else {
+					this.classList.remove('valid')
+					this.classList.add('invalid')
+				}
+			})
+			document.querySelector('.request__input[name="phone"]').addEventListener('input', function() {
+				if(this.value.match(numbers)) {
+					this.classList.add('valid')
+					this.classList.remove('invalid')
+					return true;
+				} else {
+					this.classList.remove('valid')
+					this.classList.add('invalid')
+				}
+			})
+			document.querySelector('.request__input[name="info"]').addEventListener('input', function() {
+				if(this.value.match(mailformat)) {
+					this.classList.add('valid')
+					this.classList.remove('invalid')
+					return true;
+				} else {
+					this.classList.remove('valid')
+					this.classList.add('invalid')
+				}
+			})
+		}
+	}
+	validation();
   
 
     $(window).scroll(function(){
@@ -140,23 +200,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     openDocument();
 
-	function projectImage() {
-		document.querySelectorAll('.project-image__item').forEach(item => {
-			item.addEventListener('click', function() {
-			  document.querySelector('.modal__block img').src = this.querySelector('img').src
-			  document.querySelector('.modal').classList.add('modal__show')
-			})
-			document.querySelector('.modal').addEventListener('click', (item) => {
-			  if (item.target.classList.contains('modal__block')) {
-				  document.querySelector('.modal').classList.remove('modal__show')
-			  }
-		})
-		  document.querySelector('.modal__close').addEventListener('click', (item) => {
-				document.querySelector('.modal').classList.remove('modal__show')
-			})
-		})
-	}
-	projectImage();
+	$(document).mousemove(function(e){
+		$('#cursor').css({
+		  "left" : (e.pageX + 'px'),
+		  "top" : (e.pageY   + 'px')
+	  	});
+	});
+
+	// function projectImage() {
+	// 	document.querySelectorAll('.project-image__item').forEach(item => {
+	// 		item.addEventListener('click', function() {
+	// 		  document.querySelector('.modal__block img').src = this.querySelector('img').src
+	// 		  document.querySelector('.modal').classList.add('modal__show')
+	// 		})
+	// 		document.querySelector('.modal').addEventListener('click', (item) => {
+	// 		  if (item.target.classList.contains('modal__block')) {
+	// 			  document.querySelector('.modal').classList.remove('modal__show')
+	// 		  }
+	// 	})
+	// 	  document.querySelector('.modal__close').addEventListener('click', (item) => {
+	// 			document.querySelector('.modal').classList.remove('modal__show')
+	// 		})
+	// 	})
+	// }
+	// projectImage();
 
     function openTariffPlan() {
       	if (document.querySelector('.prices')) {
@@ -167,7 +234,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			  })
 			  document.querySelector('.prices-modal__close').addEventListener('click', () => {
 				document.querySelector('.prices-modal').classList.remove('prices-modal--active');
-			  })
+			})
+			document.body.addEventListener('click', (e) => {
+				if (e.target.classList.contains('prices-modal')) {
+					document.querySelector('.prices-modal').classList.remove('prices-modal--active');
+				}
+			})
 		  }
 	  }
     openTariffPlan();
@@ -182,12 +254,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		disableMutationObserver: false, // disables automatic mutations' detections (advanced)
 		debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
 		throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-		
-	  
 		// Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
 		offset: 320, // offset (in px) from the original trigger point
 		delay: 0, // values from 0 to 3000, with step 50ms
-		duration: 700, // values from 0 to 3000, with step 50ms
+		duration: 400, // values from 0 to 3000, with step 50ms
 		easing: 'ease', // default easing for AOS animations
 		once: true, // whether animation should happen only once - while scrolling down
 		mirror: false, // whether elements should animate out while scrolling past them

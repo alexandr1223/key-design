@@ -2,6 +2,8 @@ html,
 body 
 	height: 100%
 	font-family: "MontLight"
+	cursor: url('../img/circle.png'), auto
+	// cursor: url('../img/svg/circle.svg'), auto
 
 .wrapper 
 	display: flex
@@ -67,13 +69,13 @@ body
 	&--anim
 		.title__line
 			&::before
-				animation: toRight 2.5s ease 0s forwards
+				animation: toRight 2s ease 0s forwards
 			&::after
-				animation: circleCreate 2.5s ease 0s forwards
+				animation: circleCreate 2s ease 0s forwards
 		.title__default
-			animation: spanTop 1s ease 1s forwards
+			animation: spanTop .5s ease 1s forwards
 		.title__brown
-			animation: spanBottom 1s ease 1s forwards
+			animation: spanBottom .5s ease 1s forwards
 	
 @keyframes toRight
 	0%
@@ -141,7 +143,7 @@ body
 		height: 61px
 		position: absolute
 		left: -60px
-		top: 50%
+		top: 49%
 		transform: translate(50%, -50%)
 		background: transparent
 		border-radius: 50%
@@ -161,6 +163,11 @@ input
 	&::-moz-placeholder,
 	&::-ms-input-placeholder,
 		color: #fff
+
+.valid
+	border-bottom: 1px solid #078F25 !important
+.invalid
+	border-bottom: 1px solid #AD0505 !important
 
 .header
 	position: absolute

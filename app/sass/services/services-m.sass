@@ -58,6 +58,22 @@
         padding: 70px 0
         img
             height: 400px
+        .slick-prev
+            width: 180px
+            height: calc(100% - 140px)
+            top: 70px
+        .slick-next
+            width: 180px
+            height: calc(100% - 140px)
+            top: 70px
+        .slick-dots
+            display: flex
+            align-items: flex-end
+            width: max-content
+            position: absolute
+            left: 50%
+            bottom: 90px
+            transform: translateX(-50%)
     .design
         &__product
             display: flex
@@ -201,9 +217,32 @@
             display: none
     .big-slider
         padding: 70px 0
+        padding-top: 0
         img
             height: 200px
             margin: 0 5px
+        .slick-prev
+            width: 60px
+            height: calc(100% - 70px)
+            top: 0
+        .slick-next
+            width: 60px
+            height: calc(100% - 70px)
+            top: 0
+        .slick-dots
+            display: flex
+            align-items: flex-end
+            width: max-content
+            position: absolute
+            left: 50%
+            bottom: 80px
+            transform: translateX(-50%)
+            li
+                button
+                    width: 14px
+            .slick-active
+                button
+                    width: 43px
     .design
         padding: 70px 0
         &__product
