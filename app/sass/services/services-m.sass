@@ -276,3 +276,55 @@
                 margin-bottom: 20px
         &__product-tabs
             width: 100%
+    .project
+        padding-top: 70px
+        &__keyDesign
+            display: none
+        &__descr
+            position: static
+            width: 100%
+            padding: 40px 20px
+            margin-top: 40px
+            min-height: auto
+            height: 100%
+        &__subtitle
+            font-size: 16px
+        &__content
+            font-size: 14px
+            &:not(:last-child)
+                margin-bottom: 25px
+        &__block
+            display: flex
+            flex-direction: column
+        &__title
+            font-size: 20px
+            line-height: 120%
+            margin-bottom: 30px
+        &__btn
+            margin-left: 20px
+    .project-image
+        margin-top: 40px
+        padding-bottom: 80px
+        &::before
+            display: none
+        &__group
+            display: grid
+            grid-template-columns: 1fr 2fr
+            grid-gap: 10px
+            margin-bottom: 10px
+            a
+                img
+                    height: 100%
+                    object-fit: cover
+        &__big
+            &:not(:last-child)
+                margin-bottom: 10px
+        &__nav
+            margin-top: 30px
+        &__btn
+            font-size: 10px
+            margin-left: 20px
+            &::after
+                width: 30px
+                height: 30px
+                left: -30px

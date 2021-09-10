@@ -2,8 +2,35 @@ html,
 body 
 	height: 100%
 	font-family: "MontLight"
-	cursor: url('../img/circle.png'), auto
+	cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABQSURBVHgBVYpRDYAwDESvpUKQMAmzMAkoqwQsTEL9rKwUQkL2vi7vHqnqLrIpEJUINsZsIsJnioIkAuUJOPcrfqKmpL5KGLtfR772Vd19thsdBhn0/9hG6QAAAABJRU5ErkJggg==),auto !important
+	// cursor: url('../img/circle.png'), auto
 	// cursor: url('../img/svg/circle.svg'), auto
+
+a, input, button
+	cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABQSURBVHgBVYpRDYAwDESvpUKQMAmzMAkoqwQsTEL9rKwUQkL2vi7vHqnqLrIpEJUINsZsIsJnioIkAuUJOPcrfqKmpL5KGLtfR772Vd19thsdBhn0/9hG6QAAAABJRU5ErkJggg==),auto !important
+
+.cursor
+	position: absolute
+	height: 0px
+	width: 0px
+	border-radius: 50%
+	background-color: rgba(255, 255, 255, .8)
+	transform: translate(100%, 100%)
+	z-index: 100
+
+.cursor-follower
+	position: absolute
+	height: 40px
+	width: 40px
+	border-radius: 50%
+	opacity: 0.4
+	border-radius: 50%
+	background-color: rgba(0, 0, 0, .3)
+	transition: 0.2s ease-out
+	pointer-events: none
+	will-change: all
+	transform: translate(-18px, -18px)
+	z-index: 99
 
 .wrapper 
 	display: flex
@@ -131,7 +158,7 @@ body
 	align-items: center
 	background: none
 	border: none
-	cursor: pointer
+	cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABQSURBVHgBVYpRDYAwDESvpUKQMAmzMAkoqwQsTEL9rKwUQkL2vi7vHqnqLrIpEJUINsZsIsJnioIkAuUJOPcrfqKmpL5KGLtfR772Vd19thsdBhn0/9hG6QAAAABJRU5ErkJggg==),auto !important
 	font-weight: 600
 	&:hover
 		&::after
@@ -157,7 +184,7 @@ body
 		z-index: 2
 
 input
-	cursor: pointer
+	cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABQSURBVHgBVYpRDYAwDESvpUKQMAmzMAkoqwQsTEL9rKwUQkL2vi7vHqnqLrIpEJUINsZsIsJnioIkAuUJOPcrfqKmpL5KGLtfR772Vd19thsdBhn0/9hG6QAAAABJRU5ErkJggg==),auto !important
 	&::placeholder,
 	&::-webkit-input-placeholder,
 	&::-moz-placeholder,
@@ -318,7 +345,7 @@ input
 		color: #fff
 		bottom: 50px
 		right: 0
-		cursor: pointer
+		cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABQSURBVHgBVYpRDYAwDESvpUKQMAmzMAkoqwQsTEL9rKwUQkL2vi7vHqnqLrIpEJUINsZsIsJnioIkAuUJOPcrfqKmpL5KGLtfR772Vd19thsdBhn0/9hG6QAAAABJRU5ErkJggg==),auto !important
 		svg
 			margin-right: 10px
 			transform: rotate(270deg)
@@ -388,10 +415,92 @@ input
 		position: absolute
 		right: 50px
 		top: 50px
-		cursor: pointer
+		cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABQSURBVHgBVYpRDYAwDESvpUKQMAmzMAkoqwQsTEL9rKwUQkL2vi7vHqnqLrIpEJUINsZsIsJnioIkAuUJOPcrfqKmpL5KGLtfR772Vd19thsdBhn0/9hG6QAAAABJRU5ErkJggg==),auto !important
 		svg
 			width: 40px
 			height: 40px
 			fill: #fff
+
+.modal-question
+	position: fixed
+	top: 0
+	left: 0
+	height: 100vh
+	width: 100%
+	background: rgba(0, 0, 0, .4)
+	opacity: 0
+	visibility: hidden
+	z-index: -10
+	transition: .4s
+	&__form
+		width: 100%
+		display: flex
+		flex-direction: column
+		span
+			margin-bottom: 8px
+	&__title
+		font-size: 28px
+		line-height: 130%
+		font-family: "MontBold"
+		margin-bottom: 30px
+		span
+			color: #AE816A
+	&__text
+		font-size: 16px
+		font-weight: 300
+		margin-bottom: 50px
+	&__input
+		background: transparent
+		border: none
+		border-bottom: 1px solid #000
+		padding-bottom: 4px
+		font-size: 16px
+		line-height: 22px
+		color: #000
+		max-width: 385px
+		&::placeholder,
+		&::-webkit-input-placeholder,
+		&::-moz-placeholder,
+		&::-ms-input-placeholder,
+			color: #000
+		&:not(:last-child)
+			margin-bottom: 50px
+	&__btn
+		color: #000
+		margin-left: 20px
+		margin-top: 15px
+		span
+			margin-bottom: 0
+		&::after
+			width: 51px
+			height: 51px
+			left: -50px
+	&__block
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: 80%
+		max-width: 500px
+		padding: 50px 40px 70px 40px
+		background: #fff
+		height: auto
+		max-height: 600px
+		display: flex
+		flex-direction: column
+		align-items: center
+	&__show
+		opacity: 1
+		z-index: 100
+		visibility: visible
+	&__close
+		position: absolute
+		right: 20px
+		top: 20px
+		cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABQSURBVHgBVYpRDYAwDESvpUKQMAmzMAkoqwQsTEL9rKwUQkL2vi7vHqnqLrIpEJUINsZsIsJnioIkAuUJOPcrfqKmpL5KGLtfR772Vd19thsdBhn0/9hG6QAAAABJRU5ErkJggg==),auto !important
+		svg
+			width: 20px
+			height: 20px
+			fill: #000
 
             

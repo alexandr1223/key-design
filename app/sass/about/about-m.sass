@@ -78,10 +78,10 @@
 
 @media (max-width: 767px)
     .creator
-        padding: 60px 0
+        padding: 40px 0 50px 0
         &__block
             display: flex
-            flex-direction: column
+            flex-direction: column-reverse
         &__info
             order: 1
         &__image
@@ -92,14 +92,22 @@
             margin-left: 0
             order: 2
             object-fit: cover
+            margin-bottom: 90px
+            z-index: 1
             img
                 width: auto
                 margin: 0 auto
                 height: 300px
+                z-index: 1
         &__bottom
-            position: static
+            position: absolute
             order: 3
             width: 100%
+            bottom: unset
+            top: 270px
+            left: 50%
+            transform: translateX(-50%) !important
+            z-index: 2
         &__name
             padding: 20px
             text-align: center
@@ -118,18 +126,21 @@
                 &:not(:last-child)
                     margin-bottom: 20px
     .our-team
-        padding-bottom: 70px
+        padding-bottom: 40px
+        .container
+            display: flex
+            flex-direction: column-reverse
         &__text
             margin-bottom: 10px
             p
                 font-size: 13px
                 line-height: 18px
                 &:not(:last-child)
-                    margin-bottom: 20px
+                    margin-bottom: 30px
         &__image
             position: static
             width: 100%
-            margin-top: 20px
+            margin-bottom: 20px
             &::before
                 display: none
             img
@@ -138,6 +149,11 @@
                 margin: 0 auto
     .about
         height: 100%
+        margin-bottom: 0
+        padding-bottom: 80px
+        .container
+            display: flex
+            flex-direction: column-reverse
         &__block
             margin-left: 0
             display: flex
@@ -152,7 +168,7 @@
         &__image
             position: static
             width: 100%
-            margin-top: 30px
+            margin-bottom: 100px
             height: auto
             &::before
                 display: none
@@ -166,8 +182,9 @@
             margin-left: 20px
 
     .stat
-        position: static
-        margin-top: 20px
+        position: absolute
+        top: 300px
+        bottom: unset
         &__block
             grid-template-columns: 1fr 1fr
             grid-gap: 25px

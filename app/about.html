@@ -11,7 +11,8 @@
 </head>
 
 <body>
-
+	<div class="cursor" id="cursor"></div>
+	<div class="cursor-follower" id="cursorFollow"></div>
 	<header class="header">
 		<div class="container">
 			<a href="/" class="header__logo">
@@ -84,6 +85,9 @@
 					</a>
 				</li>
 			</ul>
+			<button class="header-mobile__btn btn btn-modal">
+				<span>Узнать подробнее</span> <img src="img/svg/link-arrow.svg" alt="" class="img-svg">
+			</button>
 			<div class="header-mobile__social">
 				<a href="tel:3800991047910" class="header-mobile__phone">
 					<img src="img/svg/phone-icon.svg" alt="" class="img-svg"> +380 (099) 10 479 10
@@ -188,9 +192,9 @@
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.     
 							</p>
 						</div>
-						<a href="index.html#form" class="about__btn btn ">
+						<button class="about__btn btn btn-modal">
 							<span>Оставить заявку</span> <img src="img/svg/link-arrow.svg" alt="" class="img-svg">
-						</a>
+						</button>
 					</div>
 					<div class="about__image wow animated" data-aos="fade-right" data-aos-anchor-placement="top" data-aos-delay="1000">
 						<img src="img/about.jpg" alt="">
@@ -317,6 +321,33 @@
 					</div>
 				</div>
 			</div> 
+
+			<div class="modal-question">
+				<div class="modal-question__block">
+					<h2 class="modal-question__title">
+						Перезвоните мне
+					</h2>
+					<h3 class="modal-question__text">
+						Наш менеджер перезвонит вам в ближайшее время для уточнения деталей
+					</h3>
+					<form action="" method="POST" class="modal-question__form">
+						<span>
+							Имя
+						</span>
+						<input type="text" class="modal-question__input" >
+						<span>
+							Телефон
+						</span>
+						<input type="text" class="modal-question__input" >
+						<button type="submit" class="modal-question__btn btn">
+							<span>Узнать подробнее</span> <img src="img/svg/link-arrow.svg" alt="" class="img-svg">
+						</button>
+					</form>
+					<div class="modal-question__close">
+						<img src="img/svg/cancel.svg" alt="" class="img-svg">
+					</div>
+				</div>
+			</div>
 
 		</main>
 		<footer class="footer">

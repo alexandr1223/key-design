@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-
-
-
+	
     function menu(menuBtn, block, close) {
         if (document.querySelector(menuBtn)) {
             document.querySelector(menuBtn).addEventListener('click', () => {
@@ -15,6 +13,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     } 
     menu('.header__humburger', '.header-mobile', '.header-mobile__close');
+
+	$(document).mousemove(function(e){
+		$('#cursor').css({
+		  "left" : (e.pageX + 'px'),
+		  "top" : (e.pageY   + 'px')
+	  });
+	   $('#cursorFollow').css({
+		  "left" : (e.pageX + 'px'),
+		  "top" : (e.pageY   + 'px')
+	   });
+	});
 
     $('.services__block').slick({
         dots: false,
@@ -135,8 +144,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			})
 		}
 	}
-	validation();
-  
+	validation(); 
 
     $(window).scroll(function(){
       	$('.title').each(function(index, item) {
@@ -200,30 +208,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     openDocument();
 
+	function openForm() {
+		document.querySelectorAll('.btn-modal').forEach(item => {
+			item.addEventListener('click', function() {
+			  document.querySelector('.modal-question').classList.add('modal-question__show')
+			})
+			document.querySelector('.modal-question').addEventListener('click', (item) => {
+			  if (item.target.classList.contains('modal-question__block')) {
+				  document.querySelector('.modal-question').classList.remove('modal-question__show')
+			  }
+		})
+			document.querySelector('.modal-question__close').addEventListener('click', (item) => {
+				document.querySelector('.modal-question').classList.remove('modal-question__show')
+			})
+		})
+  }
+  openForm();
+
 	$(document).mousemove(function(e){
 		$('#cursor').css({
 		  "left" : (e.pageX + 'px'),
 		  "top" : (e.pageY   + 'px')
 	  	});
 	});
-
-	// function projectImage() {
-	// 	document.querySelectorAll('.project-image__item').forEach(item => {
-	// 		item.addEventListener('click', function() {
-	// 		  document.querySelector('.modal__block img').src = this.querySelector('img').src
-	// 		  document.querySelector('.modal').classList.add('modal__show')
-	// 		})
-	// 		document.querySelector('.modal').addEventListener('click', (item) => {
-	// 		  if (item.target.classList.contains('modal__block')) {
-	// 			  document.querySelector('.modal').classList.remove('modal__show')
-	// 		  }
-	// 	})
-	// 	  document.querySelector('.modal__close').addEventListener('click', (item) => {
-	// 			document.querySelector('.modal').classList.remove('modal__show')
-	// 		})
-	// 	})
-	// }
-	// projectImage();
 
     function openTariffPlan() {
       	if (document.querySelector('.prices')) {
